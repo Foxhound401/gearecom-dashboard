@@ -11,7 +11,7 @@ import AddNewPost from "./views/AddNewPost";
 import Errors from "./views/Errors";
 import ComponentsOverview from "./views/ComponentsOverview";
 import Tables from "./views/Tables";
-import BlogPosts from "./views/BlogPosts";
+// import BlogPosts from "./views/BlogPosts";
 
 export default [
   {
@@ -50,9 +50,4 @@ export default [
     layout: DefaultLayout,
     component: Tables
   },
-  {
-    path: "/blog-posts",
-    layout: DefaultLayout,
-    component: BlogPosts
-  }
 ];
