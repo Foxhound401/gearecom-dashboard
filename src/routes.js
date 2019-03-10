@@ -7,18 +7,26 @@ import { DefaultLayout } from "./layouts";
 // Route Views
 import BlogOverview from "./views/BlogOverview";
 import UserProfileLite from "./views/UserProfileLite";
-import AddNewPost from "./views/AddNewPost";
 import Errors from "./views/Errors";
 import ComponentsOverview from "./views/ComponentsOverview";
-import Tables from "./views/Tables";
 import BlogPosts from "./views/BlogPosts";
+import AddNewProduct from "./views/AddNewProduct";
+import AddNewUser from "./views/AddNewUser";
+import ProductManagement from "./views/ProductManagement";
+import UserManagement from "./views/UserManagement";
+import LoginDashboard from "./views/LoginDashboard";
 
 export default [
   {
     path: "/",
     exact: true,
-    layout: DefaultLayout,
-    component: () => <Redirect to="/blog-overview" />
+    layout: LoginDashboard,
+    component: () => <Redirect to="/login-dashboard" />
+  },
+  {
+    path: "/login-dashboard",
+    layout: LoginDashboard,
+    component: LoginDashboard,
   },
   {
     path: "/blog-overview",
@@ -31,9 +39,14 @@ export default [
     component: UserProfileLite
   },
   {
-    path: "/add-new-post",
+    path: "/add-new-product",
     layout: DefaultLayout,
-    component: AddNewPost
+    component: AddNewProduct
+  },
+  {
+    path: "/add-new-user",
+    layout: DefaultLayout,
+    component: AddNewUser
   },
   {
     path: "/errors",
@@ -46,13 +59,23 @@ export default [
     component: ComponentsOverview
   },
   {
-    path: "/tables",
+    path: "/tables-products",
     layout: DefaultLayout,
-    component: Tables
+    component: ProductManagement
+  },
+  {
+    path: "/tables-users",
+    layout: DefaultLayout,
+    component: UserManagement
   },
   {
     path: "/blog-posts",
     layout: DefaultLayout,
     component: BlogPosts
-  }
+  },
+//  {
+//    path: "/login-dashboard",
+//    layout: DefaultLayout,
+//    Component: LoginDashboard
+//  }
 ];

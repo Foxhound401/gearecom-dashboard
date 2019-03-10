@@ -39,29 +39,21 @@ MainFooter.propTypes = {
 
 MainFooter.defaultProps = {
   contained: false,
-  copyright: "Copyright © 2018 DesignRevision",
+  copyright: "Copyright © 2018 Gear Ecom",
   menuItems: [
     {
       title: "Home",
-      to: "#"
+      to: "/blog-overview"
     },
     {
-      title: "Services",
-      to: "#"
+      title: "Users Management",
+      to: "/tables-users"
     },
     {
-      title: "About",
-      to: "#"
-    },
-    {
-      title: "Products",
-      to: "#"
-    },
-    {
-      title: "Blog",
-      to: "#"
+      title: "Products Management",
+      to: "/tables-products"
     }
-  ]
+    ]
 };
 
 export default MainFooter;
