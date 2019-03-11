@@ -13,6 +13,7 @@ import AddNewUser from "./views/AddNewUser";
 import ProductManagement from "./views/ProductManagement";
 import UserManagement from "./views/UserManagement";
 import LoginDashboard from "./views/LoginDashboard";
+import DashboardOverview from "./views/DashboardOverview";
 
 export default [
   {
@@ -30,6 +31,11 @@ export default [
     path: "/blog-overview",
     layout: DefaultLayout,
     component: BlogOverview
+  },
+  {
+    path: "/dashboard-overview",
+    layout: DefaultLayout,
+    component: DashboardOverview
   },
   {
     path: "/user-profile-lite",

@@ -51,7 +51,7 @@ class LoginDashboard extends Component {
   }
 
   onChange(e) {
-    this.setState({[e.target.name]: e.target.value});
+    this.setState({ [e.target.name]: e.target.value });
   }
 
   onSubmit(e) {
@@ -62,9 +62,7 @@ class LoginDashboard extends Component {
       password: this.state.password
     }
     login(user).then(res => {
-      if (res) {
-        this.props.history.push(`\blog-overview`)
-      }
+        this.props.history.push(`/dashboard-overview`)
     })
   }
 
@@ -77,12 +75,12 @@ class LoginDashboard extends Component {
             sm={{ size: 7, order: 2, offset: 2 }}
           >
             <label>
-              <strong className="text-muted">Login</strong>
+              <strong className="text-muted">Please sign in</strong>
             </label>
-            <Form>
+            <Form onSubmit={this.onSubmit}>
               <label>Username</label>
               <FormGroup>
-                <FormInput id="#username" placeholder="Username" />
+                <FormInput id="#username" name="email" placeholder="Username"  onChange={this.onChange} />
               </FormGroup>
               <label>Password</label>
               <FormGroup>
@@ -90,9 +88,11 @@ class LoginDashboard extends Component {
                   type="password"
                   id="$password"
                   placeholder="Password"
+                  name="password"
+                  onChange={this.onChange}
                 />
               </FormGroup>
-              <Button outline pill size="md">
+              <Button outline pill size="md" type="submit">
                 Login to Dashboard
               </Button>
             </Form>
