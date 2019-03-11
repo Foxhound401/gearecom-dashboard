@@ -8,8 +8,6 @@ import { DefaultLayout } from "./layouts";
 import BlogOverview from "./views/BlogOverview";
 import UserProfileLite from "./views/UserProfileLite";
 import Errors from "./views/Errors";
-import ComponentsOverview from "./views/ComponentsOverview";
-import BlogPosts from "./views/BlogPosts";
 import AddNewProduct from "./views/AddNewProduct";
 import AddNewUser from "./views/AddNewUser";
 import ProductManagement from "./views/ProductManagement";
@@ -54,11 +52,6 @@ export default [
     component: Errors
   },
   {
-    path: "/components-overview",
-    layout: DefaultLayout,
-    component: ComponentsOverview
-  },
-  {
     path: "/tables-products",
     layout: DefaultLayout,
     component: ProductManagement
@@ -68,14 +61,4 @@ export default [
     layout: DefaultLayout,
     component: UserManagement
   },
-  {
-    path: "/blog-posts",
-    layout: DefaultLayout,
-    component: BlogPosts
-  },
-//  {
-//    path: "/login-dashboard",
-//    layout: DefaultLayout,
-//    Component: LoginDashboard
-//  }
 ];

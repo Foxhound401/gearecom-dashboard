@@ -1,18 +1,92 @@
-import React from "react";
+import React, { Component } from "react";
 import {
   Row,
   Col,
   Form,
   FormGroup,
-  FormFeedback,
   FormInput,
-  FormSelect
+  Container,
+  Button
 } from "shards-react";
 
-const LoginDashboard = () => (
-    <Col sm="12" md="6">
-      <strong className="text-muted d-block mb-2">Login</strong>
-    </Col>
-);
+//const LoginDashboard = () => (
+//  <Container>
+//    <Row style={loginComponent}>
+//      <Col
+//        xs={{ size: 8, order: 2, offset: 2 }}
+//        sm={{ size: 7, order: 2, offset: 2 }}
+//      >
+//        <label>
+//          <strong className="text-muted">Login</strong>
+//        </label>
+//        <Form>
+//          <label>Username</label>
+//          <FormGroup>
+//            <FormInput id="#username" placeholder="Username" />
+//          </FormGroup>
+//          <label>Password</label>
+//          <FormGroup>
+//            <FormInput type="password" id="$password" placeholder="Password" />
+//          </FormGroup>
+//          <Button outline pill size="md">
+//            Login to Dashboard
+//          </Button>
+//        </Form>
+//      </Col>
+//    </Row>
+//  </Container>
+//);
+
+class LoginDashboard extends Component {
+  constructor() {
+    super();
+    this.state = {
+      email: "",
+      password: "",
+      username: ""
+    }
+
+    this.onChange = this.onChange.bind(this)
+    this.onSubmit = this.onSubmit.bind(this)
+  }
+
+  render() {
+    return (
+      <Container>
+        <Row style={loginComponent}>
+          <Col
+            xs={{ size: 8, order: 2, offset: 2 }}
+            sm={{ size: 7, order: 2, offset: 2 }}
+          >
+            <label>
+              <strong className="text-muted">Login</strong>
+            </label>
+            <Form>
+              <label>Username</label>
+              <FormGroup>
+                <FormInput id="#username" placeholder="Username" />
+              </FormGroup>
+              <label>Password</label>
+              <FormGroup>
+                <FormInput
+                  type="password"
+                  id="$password"
+                  placeholder="Password"
+                />
+              </FormGroup>
+              <Button outline pill size="md">
+                Login to Dashboard
+              </Button>
+            </Form>
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
+}
+
+const loginComponent = {
+  marginTop: "25%"
+};
 
 export default LoginDashboard;
