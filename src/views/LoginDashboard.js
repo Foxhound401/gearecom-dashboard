@@ -62,7 +62,9 @@ class LoginDashboard extends Component {
       password: this.state.password
     }
     login(user).then(res => {
+      if (res) {
         this.props.history.push(`/dashboard-overview`)
+      }
     })
   }
 
