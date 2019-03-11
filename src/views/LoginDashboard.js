@@ -78,9 +78,9 @@ class LoginDashboard extends Component {
               <strong className="text-muted">Please sign in</strong>
             </label>
             <Form onSubmit={this.onSubmit}>
-              <label>Username</label>
+              <label>Email</label>
               <FormGroup>
-                <FormInput id="#username" name="email" placeholder="Username"  onChange={this.onChange} />
+                <FormInput id="#email" name="email" placeholder="Email"  onChange={this.onChange} />
               </FormGroup>
               <label>Password</label>
               <FormGroup>
