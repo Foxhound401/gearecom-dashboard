@@ -46,23 +46,10 @@ class RangeDatePicker extends React.Component {
           size="sm"
           selected={this.state.startDate}
           onChange={this.handleStartDateChange}
-          placeholderText="Start Date"
+          placeholderText="DOB"
           dropdownMode="select"
           className="text-center"
         />
-        <DatePicker
-          size="sm"
-          selected={this.state.endDate}
-          onChange={this.handleEndDateChange}
-          placeholderText="End Date"
-          dropdownMode="select"
-          className="text-center"
-        />
-        <InputGroupAddon type="append">
-          <InputGroupText>
-            <i className="material-icons">&#xE916;</i>
-          </InputGroupText>
-        </InputGroupAddon>
       </InputGroup>
     );
   }
