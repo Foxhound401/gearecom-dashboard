@@ -67,4 +67,9 @@ export default [
     layout: DefaultLayout,
     component: UserManagement
   },
+  {
+    path: "/user-profile",
+    layout: DefaultLayout,
+    component: UserProfileLite
+  },
 ];

@@ -1,8 +1,8 @@
 export default function() {
   return [
     {
-      title: "Blog Dashboard",
-      to: "/blog-overview",
+      title: "Dashboard Overview",
+      to: "/dashboard-overview",
       htmlBefore: '<i class="material-icons">dashboard</i>',
     },
     {
