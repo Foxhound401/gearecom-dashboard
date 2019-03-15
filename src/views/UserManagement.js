@@ -1,16 +1,23 @@
 import React from "react";
-import { Container, Row, Col, Card, CardHeader, CardBody } from "shards-react";
+import {
+  Container,
+  Row,
+  Col,
+  Card,
+  CardHeader,
+  CardBody,
+  Button
+} from "shards-react";
 import PageTitle from "../components/common/PageTitle";
 import { getAllUsers } from "../components/api/UserFunction";
 
 class UserManagement extends React.Component {
-
   constructor(props) {
-    super(props)
-    this.data = getAllUsers() 
+    super(props);
+    this.data = getAllUsers();
     this.state = {
       data: this.data
-    }
+    };
   }
 
   render() {
@@ -55,6 +62,9 @@ class UserManagement extends React.Component {
                       <th scope="col" className="border-0">
                         Phone
                       </th>
+                      <th scope="col" className="border-0">
+                        Option
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -65,6 +75,26 @@ class UserManagement extends React.Component {
                       <td>Russian Federation</td>
                       <td>Gdańsk</td>
                       <td>107-0339</td>
+                      <td>
+                        <div>
+                          <Button
+                            outline
+                            size="sm"
+                            type="submit"
+                            className="mr-2"
+                          >
+                            Edit
+                          </Button>
+                          <Button
+                            outline
+                            size="sm"
+                            type="submit"
+                            className="mr-2"
+                          >
+                            Delete
+                          </Button>
+                        </div>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -76,5 +106,9 @@ class UserManagement extends React.Component {
     );
   }
 }
+
+const Buttons = {
+  paddingRight: "10px"
+};
 
 export default UserManagement;
