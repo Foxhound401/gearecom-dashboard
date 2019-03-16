@@ -8,6 +8,8 @@ import {
   CardBody,
   Button
 } from "shards-react";
+
+import moment from "moment";
 import PageTitle from "../components/common/PageTitle";
 import { getAllUsers } from "../components/api/UserFunction";
 
@@ -85,7 +87,7 @@ class UserManagement extends React.Component {
                           <td>{item.name}</td>
                           <td>{item.email}</td>
                           <td>{item.role}</td>
-                          <td>{item.birthday}</td>
+                          <td>{moment(item.birthday).format("MMM Do YY")}</td>
                           <td>{item.balance}</td>
                           <td>
                             <div>

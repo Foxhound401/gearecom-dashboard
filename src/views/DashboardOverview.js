@@ -77,7 +77,7 @@ DashboardOverview.defaultProps = {
     },
     {
       label: "Most Buy Category",
-      value: "17,281",
+      value: "281",
       percentage: "2.4%",
       increase: false,
       decrease: true,

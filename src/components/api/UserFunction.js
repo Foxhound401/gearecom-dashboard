@@ -14,8 +14,7 @@ export const register = newUser => {
     });
 };
 
-export const login = user => {
-  // console.log("email: " + user.email)
+export const login = user => { // console.log("email: " + user.email)
   // console.log("password: " + user.password)
   return axios
     .post(`${url}users/login`, {

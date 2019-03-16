@@ -55,23 +55,23 @@ class ProductManagement extends React.Component {
                 <table className="table mb-0">
                   <thead className="bg-light">
                     <tr>
-                      <th scope="col" className="border-0">
+                      <th scope="col" className="border-0 ">
                         #
                       </th>
-                      <th scope="col" className="border-0">
-                        First Name
+                      <th scope="col" className="border-0 w-50">
+                        Product Name
                       </th>
                       <th scope="col" className="border-0">
-                        Last Name
+                        Price
                       </th>
                       <th scope="col" className="border-0">
-                        Country
+                        Category
                       </th>
                       <th scope="col" className="border-0">
-                        City
+                        Manufacturer
                       </th>
                       <th scope="col" className="border-0">
-                        Phone
+                        Quantity
                       </th>
                       <th scope="col" className="border-0">
                         Option
@@ -79,34 +79,38 @@ class ProductManagement extends React.Component {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Ali</td>
-                      <td>Kerry</td>
-                      <td>Russian Federation</td>
-                      <td>Gdańsk</td>
-                      <td>107-0339</td>
-                      <td>
-                        <div>
-                          <Button
-                            outline
-                            size="sm"
-                            type="submit"
-                            className="mr-2"
-                          >
-                            Edit
-                          </Button>
-                          <Button
-                            outline
-                            size="sm"
-                            type="submit"
-                            className="mr-2"
-                          >
-                            Delete
-                          </Button>
-                        </div>
-                      </td>
-                    </tr>
+                    {this.state.data.map((item, key) => {
+                      return (
+                        <tr key={key}>
+                          <td>{key + 1}</td>
+                          <td className="w-50">{item.ProductName}</td>
+                          <td>{item.price}</td>
+                          <td>{item.Category}</td>
+                          <td>{item.Manufacturer}</td>
+                          <td>{item.quantity}</td>
+                          <td>
+                            <div>
+                              <Button
+                                outline
+                                size="sm"
+                                type="submit"
+                                className="mr-4"
+                              >
+                                Edit
+                              </Button>
+                              <Button
+                                outline
+                                size="sm"
+                                type="submit"
+                                className="mr-4"
+                              >
+                                Delete
+                              </Button>
+                            </div>
+                          </td>
+                        </tr>
+                      );
+                    })}
                   </tbody>
                 </table>
               </CardBody>

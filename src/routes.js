@@ -5,7 +5,6 @@ import { Redirect } from "react-router-dom";
 import { DefaultLayout } from "./layouts";
 
 // Route Views
-import BlogOverview from "./views/BlogOverview";
 import UserProfileLite from "./views/UserProfileLite";
 import Errors from "./views/Errors";
 import AddNewProduct from "./views/AddNewProduct";
@@ -26,11 +25,6 @@ export default [
     path: "/login-dashboard",
     layout: LoginDashboard,
     component: LoginDashboard,
-  },
-  {
-    path: "/blog-overview",
-    layout: DefaultLayout,
-    component: BlogOverview
   },
   {
     path: "/dashboard-overview",

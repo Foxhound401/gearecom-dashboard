@@ -10,33 +10,6 @@ import {
 } from "shards-react";
 import { login } from "../components/api/UserFunction";
 import BackgroundImage from "../images/background/background.png";
-//const LoginDashboard = () => (
-//  <Container>
-//    <Row style={loginComponent}>
-//      <Col
-//        xs={{ size: 8, order: 2, offset: 2 }}
-//        sm={{ size: 7, order: 2, offset: 2 }}
-//      >
-//        <label>
-//          <strong className="text-muted">Login</strong>
-//        </label>
-//        <Form>
-//          <label>Username</label>
-//          <FormGroup>
-//            <FormInput id="#username" placeholder="Username" />
-//          </FormGroup>
-//          <label>Password</label>
-//          <FormGroup>
-//            <FormInput type="password" id="$password" placeholder="Password" />
-//          </FormGroup>
-//          <Button outline pill size="md">
-//            Login to Dashboard
-//          </Button>
-//        </Form>
-//      </Col>
-//    </Row>
-//  </Container>
-//);
 
 class LoginDashboard extends Component {
   constructor() {
