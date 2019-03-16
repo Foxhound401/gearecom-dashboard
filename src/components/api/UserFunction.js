@@ -34,11 +34,14 @@ export const login = user => {
 
 export const getAllUsers = users => {
   return axios
-    .get(`${url}users/get-all-users`, {})
+    .get(`${url}users/get-all-users`)
     .then(res => {
-      return res.data;
+      console.log("res.data" + res.data);
+      if (res) {
+        return res.data;
+      }
     })
     .catch(err => {
-      console.log("ERROR AT GETALLUSER_API" + err);
+      console.log("ERROR AT GETALLUSER_API " + err);
     });
 };

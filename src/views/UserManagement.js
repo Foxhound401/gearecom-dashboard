@@ -14,10 +14,20 @@ import { getAllUsers } from "../components/api/UserFunction";
 class UserManagement extends React.Component {
   constructor(props) {
     super(props);
-    this.data = getAllUsers();
     this.state = {
-      data: this.data
+      data: []
     };
+    this.getAllUsersFromDB = this.getAllUsersFromDB.bind(this);
+  }
+
+  getAllUsersFromDB() {
+    getAllUsers().then(res => {
+      this.setState({ data: res });
+    });
+  }
+
+  componentDidMount() {
+    this.getAllUsersFromDB();
   }
 
   render() {
@@ -48,19 +58,19 @@ class UserManagement extends React.Component {
                         #
                       </th>
                       <th scope="col" className="border-0">
-                        First Name
+                        Full Name
                       </th>
                       <th scope="col" className="border-0">
-                        Last Name
+                        Email
                       </th>
                       <th scope="col" className="border-0">
-                        Country
+                        Role
                       </th>
                       <th scope="col" className="border-0">
-                        City
+                        Birthday
                       </th>
                       <th scope="col" className="border-0">
-                        Phone
+                        Balance
                       </th>
                       <th scope="col" className="border-0">
                         Option
@@ -68,34 +78,38 @@ class UserManagement extends React.Component {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Ali</td>
-                      <td>Kerry</td>
-                      <td>Russian Federation</td>
-                      <td>Gdańsk</td>
-                      <td>107-0339</td>
-                      <td>
-                        <div>
-                          <Button
-                            outline
-                            size="sm"
-                            type="submit"
-                            className="mr-2"
-                          >
-                            Edit
-                          </Button>
-                          <Button
-                            outline
-                            size="sm"
-                            type="submit"
-                            className="mr-2"
-                          >
-                            Delete
-                          </Button>
-                        </div>
-                      </td>
-                    </tr>
+                    {this.state.data.map((item, key) => {
+                      return (
+                        <tr key={key}>
+                          <td>{key + 1}</td>
+                          <td>{item.name}</td>
+                          <td>{item.email}</td>
+                          <td>{item.role}</td>
+                          <td>{item.birthday}</td>
+                          <td>{item.balance}</td>
+                          <td>
+                            <div>
+                              <Button
+                                outline
+                                size="sm"
+                                type="submit"
+                                className="mr-2"
+                              >
+                                Edit
+                              </Button>
+                              <Button
+                                outline
+                                size="sm"
+                                type="submit"
+                                className="mr-2"
+                              >
+                                Delete
+                              </Button>
+                            </div>
+                          </td>
+                        </tr>
+                      );
+                    })}
                   </tbody>
                 </table>
               </CardBody>
