@@ -54,11 +54,6 @@ export default [
     component: Errors
   },
   {
-    path: "/components-overview",
-    layout: DefaultLayout,
-    component: ComponentsOverview
-  },
-  {
     path: "/tables-products",
     layout: DefaultLayout,
     component: ProductManagement
@@ -68,14 +63,4 @@ export default [
     layout: DefaultLayout,
     component: UserManagement
   },
-  {
-    path: "/blog-posts",
-    layout: DefaultLayout,
-    component: BlogPosts
-  },
-//  {
-//    path: "/login-dashboard",
-//    layout: DefaultLayout,
-//    Component: LoginDashboard
-//  }
 ];
