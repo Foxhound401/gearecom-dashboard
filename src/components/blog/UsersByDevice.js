@@ -69,15 +69,10 @@ class UsersByDevice extends React.Component {
                 style={{ maxWidth: "130px" }}
                 onChange={() => {}}
               >
-                <option value="last-week">Last Week</option>
                 <option value="today">Today</option>
                 <option value="last-month">Last Month</option>
                 <option value="last-year">Last Year</option>
               </FormSelect>
-            </Col>
-            <Col className="text-right view-report">
-              {/* eslint-disable-next-line */}
-              <a href="#">View full report &rarr;</a>
             </Col>
           </Row>
         </CardFooter>
@@ -111,15 +106,11 @@ UsersByDevice.defaultProps = {
     datasets: [
       {
         hoverBorderColor: "#ffffff",
-        data: [68.3, 24.2, 7.5],
-        backgroundColor: [
-          "rgba(0,123,255,0.9)",
-          "rgba(0,123,255,0.5)",
-          "rgba(0,123,255,0.3)"
-        ]
+        data: [68.3, 24.2],
+        backgroundColor: ["rgba(0,123,255,0.9)", "rgba(0,123,255,0.5)"]
       }
     ],
-    labels: ["Desktop", "Tablet", "Mobile"]
+    labels: ["Desktop", "Mobile"]
   }
 };
 

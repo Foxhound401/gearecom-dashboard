@@ -7,7 +7,7 @@ import SmallStats from "./../components/common/SmallStats";
 import UsersOverview from "./../components/blog/UsersOverview";
 import UsersByDevice from "./../components/blog/UsersByDevice";
 
-const BlogOverview = ({ smallStats }) => (
+const DashboardOverview = ({ smallStats }) => (
   <Container fluid className="main-content-container px-4">
     {/* Page Header */}
     <Row noGutters className="page-header py-4">
@@ -47,14 +47,14 @@ const BlogOverview = ({ smallStats }) => (
   </Container>
 );
 
-BlogOverview.propTypes = {
+DashboardOverview.propTypes = {
   /**
    * The small stats dataset.
    */
   smallStats: PropTypes.array
 };
 
-BlogOverview.defaultProps = {
+DashboardOverview.defaultProps = {
   smallStats: [
     {
       label: "New Customers",
@@ -77,7 +77,7 @@ BlogOverview.defaultProps = {
     },
     {
       label: "Most Buy Category",
-      value: "17,281",
+      value: "281",
       percentage: "2.4%",
       increase: false,
       decrease: true,
@@ -97,4 +97,4 @@ BlogOverview.defaultProps = {
   ]
 };
 
-export default BlogOverview;
+export default DashboardOverview;

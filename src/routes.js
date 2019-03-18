@@ -5,16 +5,14 @@ import { Redirect } from "react-router-dom";
 import { DefaultLayout } from "./layouts";
 
 // Route Views
-import BlogOverview from "./views/BlogOverview";
 import UserProfileLite from "./views/UserProfileLite";
 import Errors from "./views/Errors";
-import ComponentsOverview from "./views/ComponentsOverview";
-import BlogPosts from "./views/BlogPosts";
 import AddNewProduct from "./views/AddNewProduct";
 import AddNewUser from "./views/AddNewUser";
 import ProductManagement from "./views/ProductManagement";
 import UserManagement from "./views/UserManagement";
 import LoginDashboard from "./views/LoginDashboard";
+import DashboardOverview from "./views/DashboardOverview";
 
 export default [
   {
@@ -29,9 +27,9 @@ export default [
     component: LoginDashboard,
   },
   {
-    path: "/blog-overview",
+    path: "/dashboard-overview",
     layout: DefaultLayout,
-    component: BlogOverview
+    component: DashboardOverview
   },
   {
     path: "/user-profile-lite",
@@ -62,5 +60,10 @@ export default [
     path: "/tables-users",
     layout: DefaultLayout,
     component: UserManagement
+  },
+  {
+    path: "/user-profile",
+    layout: DefaultLayout,
+    component: UserProfileLite
   },
 ];
