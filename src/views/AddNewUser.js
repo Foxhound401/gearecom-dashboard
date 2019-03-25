@@ -16,6 +16,7 @@ import Editor from "../components/add-new-post/NewUserEditor";
 import SidebarActions from "../components/add-new-post/SidebarActions";
 import SidebarCategories from "../components/add-new-post/SidebarCategories";
 import DatePicker from "../components/common/RangeDatePicker";
+import { register } from "../components/api/UserFunction";
 
 class AddNewUser extends React.Component {
   constructor() {
@@ -25,14 +26,35 @@ class AddNewUser extends React.Component {
       password: "",
       email: "",
       name: "",
-      role: ""
+      role: "admin"
     };
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
 
+  onSubmit(e) {
+    e.preventDefault();
+    console.log("click in User");
+
+    const user = {
+      username: this.state.username,
+      password: this.state.password,
+      email: this.state.email,
+      name: this.state.name,
+      role: this.state.role
+    };
+
+    register(user).then(res => {
+      console.log(" returned: " + res);
+      if (res) {
+        this.props.history.push("/tables-users");
+      }
+    });
+  }
   render() {
     return (
       <Container fluid className="main-content-container px-4 pb-4">
@@ -51,12 +73,13 @@ class AddNewUser extends React.Component {
           <Col lg="9" md="12">
             <Card small className="mb-3">
               <CardBody>
-                <Form className="add-new-post">
+                <Form className="add-new-post" onSubmit={this.onSubmit}>
                   <FormInput
                     name="username"
                     size="lg"
                     className="mb-3"
                     placeholder="UserName"
+                    onChange={this.onChange}
                   />
                   <FormInput
                     name="password"
@@ -64,32 +87,40 @@ class AddNewUser extends React.Component {
                     className="mb-3"
                     type="password"
                     placeholder="Password"
+                    onChange={this.onChange}
                   />
                   <FormInput
                     name="email"
                     size="lg"
                     className="mb-3"
                     placeholder="Email"
+                    onChange={this.onChange}
                   />
                   <FormInput
                     name="name"
                     size="lg"
                     className="mb-3"
                     placeholder="Full Name"
+                    onChange={this.onChange}
                   />
                   <label>Role</label>
-                  <FormSelect size="md" className="mb-2" name="role">
+                  <FormSelect
+                    size="md"
+                    className="mb-2"
+                    name="role"
+                    onChange={this.onChange}
+                  >
                     <option value="admin">Admin</option>
                     <option value="user">User</option>
                   </FormSelect>
+                  <div>
+                    <Button size="lg" type="submit">
+                      Save
+                    </Button>
+                  </div>
                 </Form>
               </CardBody>
             </Card>
-            <div>
-              <Button size="lg" type="submit">
-                Save
-              </Button>
-            </div>
           </Col>
         </Row>
       </Container>

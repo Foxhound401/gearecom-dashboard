@@ -65,8 +65,6 @@ class AddNewProduct extends React.Component {
       manufacter: this.state.manufacter
     };
 
-    console.log("name: " + product.name);
-    console.log("category and manufacter : " + product.category + " " + product.manufacter);
     addNewProduct(product).then(res => {
       if (res) {
         this.props.history.push("/tables-products");
@@ -139,7 +137,7 @@ class AddNewProduct extends React.Component {
                     <Col className="col-lg mb-4">
                       <label htmlFor="#username">Categories</label>
                       <FormSelect
-                        name="idCategory"
+                        name="category"
                         size="md"
                         className="mb-2"
                         onChange={this.onChange}

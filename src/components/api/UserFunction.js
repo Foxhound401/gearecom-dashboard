@@ -7,15 +7,18 @@ export const register = newUser => {
       username: newUser.username,
       password: newUser.password,
       email: newUser.email,
-      name: newUser.name
+      name: newUser.name,
+      role: newUser.role
     })
     .then(res => {
-      console.log("Regsitered");
+      return res.data;
+    })
+    .catch(error => {
+      console.log("ERROR AT REGISTER_API " + error);
     });
 };
 
-export const login = user => { // console.log("email: " + user.email)
-  // console.log("password: " + user.password)
+export const login = user => {
   return axios
     .post(`${url}users/login`, {
       email: user.email,
@@ -23,7 +26,6 @@ export const login = user => { // console.log("email: " + user.email)
     })
     .then(res => {
       localStorage.setItem("usertoken", res.data);
-      // console.log("data: " + res.data)
       return res.data;
     })
     .catch(err => {
